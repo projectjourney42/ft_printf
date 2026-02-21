@@ -1,0 +1,18 @@
+__ft_printf_hexa, the / at the end
+	__ft_printf_hexa_loxer
+	__ft_printf_hexa_upper
+__ft_print_adddress
+__real test for :
+	__ft_printf_number
+	__ft_printf_unsigned_nbr
+	__ft_print_char
+__gestion d'erreurs
+__return (value of the wrotten character)
+__gestion INT_MIN / MAX pour %d et %i
+__gestion UINT_MIN / MAX pour %x, %X et %u
+
+
+
+=> create a new git repo
+=> add to git repo
+
