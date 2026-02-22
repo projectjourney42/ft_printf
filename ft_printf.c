@@ -6,7 +6,7 @@
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:44:04 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/23 00:13:15 by haranivo         ###   ########.fr       */
+/*   Updated: 2026/02/23 00:46:05 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ int ft_which_print(const char *format, int i, va_list print)
 	else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 		return (ft_printf_number(va_arg(print, int), format[i + 1]));
 	else if (format[i + 1] == 'u')
-		return (ft_printf_unsigned_nbr(va_arg(print,unsigned int)))
+		return (ft_printf_unsigned_nbr(va_arg(print,unsigned int)));
 	else if (format[i + 1] == 'x' || format[i + 1] == 'X')
 		return(ft_printf_hexa(va_arg(print, unsigned int), format[i + 1]));
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -41,9 +42,11 @@ int	ft_printf(const char *format, ...)
 	va_start(print, format);
 	len = 0;
 	i = 0;
+	if (!format)
+		return (0);
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			len += ft_which_print(format, i, print);
 			i++;
@@ -56,5 +59,5 @@ int	ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(print);
-	return (len)
+	return (len);
 }
