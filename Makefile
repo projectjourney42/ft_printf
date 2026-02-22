@@ -6,7 +6,7 @@
 #    By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/13 12:51:14 by haranivo          #+#    #+#              #
-#    Updated: 2026/02/19 16:52:30 by haranivo         ###   ########.fr        #
+#    Updated: 2026/02/23 00:28:58 by haranivo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,23 @@ RM = rm -f
 
 AR = ar src
 
+MAKE = make -C
+
+LIBFT_DIR = libft/
+
+LIBFT_A = $(LIBFT_DIR)/libft.a
+
 all : $(NAME) 
 
-# libft.a: libft
-# 	./libft/make all
-
-$(NAME) : $(OBJ)
+$(NAME) : libft $(OBJ)
+	cp $(LIBFT_A) $(NAME)
 	$(AR) $(NAME) $(OBJ)
+
+libft:
+	$(MAKE) $(LIBFT_DIR) all
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)
