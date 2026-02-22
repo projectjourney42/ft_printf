@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_string.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 10:26:12 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/22 23:16:43 by haranivo         ###   ########.fr       */
+/*   Created: 2026/02/22 20:40:37 by haranivo          #+#    #+#             */
+/*   Updated: 2026/02/22 21:28:55 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printf_char(char c)
+int ft_printf_string(char *s)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+    if (!s)
+        return (0);
+    ft_putstr_fd(s, 1);
+    return (ft_strlen(s));
 }
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	char c = 'd';
-
-// 	ft_printf_char(c);
-// 	ft_putchar_fd(10, 1);
-
-// 	printf("\n%d\n", ft_printf_char(c));
-
-// 	return (0);
-// }

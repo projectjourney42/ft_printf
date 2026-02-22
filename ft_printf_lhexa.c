@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_unsigned_nbr.c                           :+:      :+:    :+:   */
+/*   ft_printf_lhexa.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 10:49:09 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/22 23:10:41 by haranivo         ###   ########.fr       */
+/*   Created: 2026/02/22 22:11:26 by haranivo          #+#    #+#             */
+/*   Updated: 2026/02/22 22:43:38 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_count(unsigned int nbr)
+static void	ft_lhexa(unsigned long add)
 {
-	int	i;
+	int		hex;
+	int		i;
+	char	*hexa;
 
+	hexa = malloc(sizeof(char) * (ft_count_long(add) + 1));
+	if (!hexa)
+		return ;
 	i = 0;
-
-	while (nbr > 0)
+	while (add > 0)
 	{
-		nbr /= 10;
+		hex = add % 16;
+		add /= 16;
+		if (hex > 9)
+			hexa[i] = hex - 10 + 'a';
+		else
+			hexa[i] = hex + '0';
 		i++;
 	}
-	return (i);
+	hexa[i] = '\0';
+	ft_rev_char(hexa);
+	free(hexa);
 }
 
-int	ft_printf_unsigned_nbr(unsigned int nbr)
+int ft_printf_lhexa(unsigned long add)
 {
-	if (nbr > 9)
-	{
-		ft_putnbr_fd(nbr / 10, fd);
-		ft_putnbr_fd(nbr % 10, fd);
-	}
-	else
-		ft_putchar_fd(nbr + '0', 1);
-	return(ft_count(nbr));
+    ft_lhexa(add);
+    return (ft_count_long(add));
 }

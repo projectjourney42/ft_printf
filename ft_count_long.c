@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_count_long.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 10:26:12 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/22 23:16:43 by haranivo         ###   ########.fr       */
+/*   Created: 2026/02/22 22:22:33 by haranivo          #+#    #+#             */
+/*   Updated: 2026/02/22 22:34:52 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printf_char(char c)
+"include "
+int	ft_count_long(unsigned long nbr)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+
+	while (nbr > 0)
+	{
+		nbr /= 16;
+		i++;
+	}
+	return (i);
 }
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	char c = 'd';
-
-// 	ft_printf_char(c);
-// 	ft_putchar_fd(10, 1);
-
-// 	printf("\n%d\n", ft_printf_char(c));
-
-// 	return (0);
-// }

@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_rev_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/20 10:26:12 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/22 23:16:43 by haranivo         ###   ########.fr       */
+/*   Created: 2026/02/22 22:21:12 by haranivo          #+#    #+#             */
+/*   Updated: 2026/02/22 23:15:37 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_char(char c)
+void	ft_rev_char(char *str)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int		i;
+	int		len;
+	char	tmp;
+
+	if (!str)
+		return ;
+	len = ft_strlen((const char *)str) - 1;
+	i = 0;
+	while (i < len)
+	{
+		tmp = str[i];
+		str[i] = str[len];
+		str[len] = tmp;
+		i++;
+		len--;
+	}
+	ft_putstr_fd(str, 1);
 }
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	char c = 'd';
-
-// 	ft_printf_char(c);
-// 	ft_putchar_fd(10, 1);
-
-// 	printf("\n%d\n", ft_printf_char(c));
-
-// 	return (0);
-// }
