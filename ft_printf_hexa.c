@@ -6,7 +6,7 @@
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 20:40:52 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/23 15:02:19 by haranivo         ###   ########.fr       */
+/*   Updated: 2026/02/23 23:47:08 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,3 @@ int	ft_printf_hexa(unsigned int nbr, char type)
 	ft_hexa(nbr, type);
 	return (ft_count(nbr));
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	unsigned int n = 4294967295;
-
-// 	printf("Original printf x  : %x\n", n);
-// 	printf("Original printf X  : %X\n", n);
-
-// 	ft_printf_hexa(n, 'x');
-// 	write(1, "\n", 1);
-
-// 	ft_printf_hexa(n, 'X');
-// 	write(1, "\n", 1);
-
-// 	ft_printf_hexa(0, 'x');
-// 	write(1, "\n", 1);
-
-// 	printf("\nft_printf return (%d\n", ft_printf_hexa(n, 'x')));
-// 	printf("\nft_printf return (%d\n", ft_printf_hexa(0, 'x')));
-// 	return (0);
-// }

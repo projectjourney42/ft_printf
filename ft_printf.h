@@ -6,7 +6,7 @@
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:20:07 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/23 16:59:41 by haranivo         ###   ########.fr       */
+/*   Updated: 2026/02/23 23:53:55 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "libft/libft.h"
 # include <stdarg.h>
-# include <unistd.h>
 # include <stdlib.h>
 
 int		ft_printf_string(char *s);
