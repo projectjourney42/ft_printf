@@ -6,7 +6,7 @@
 #    By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/13 12:51:14 by haranivo          #+#    #+#              #
-#    Updated: 2026/02/23 00:28:58 by haranivo         ###   ########.fr        #
+#    Updated: 2026/02/23 16:51:08 by haranivo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME =  libftprintf.a
 
-SRC =
+SRC = ft_count_long.c ft_printf_address.c ft_printf.c ft_printf_hexa.c ft_printf_lhexa.c ft_printf_number.c ft_printf_string.c ft_printf_unsigned_nbr.c ft_rev_char.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -26,7 +26,7 @@ AR = ar src
 
 MAKE = make -C
 
-LIBFT_DIR = libft/
+LIBFT_DIR = libft
 
 LIBFT_A = $(LIBFT_DIR)/libft.a
 
@@ -45,9 +45,9 @@ libft:
 clean:
 	$(RM) $(OBJ)
 
-fclean:
+fclean: clean
 	$(RM) $(NAME)
 	
 re: fclean all
 
-.PHONY: all re clean fclean 
+.PHONY: all re clean fclean libft

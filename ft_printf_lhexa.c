@@ -6,7 +6,7 @@
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 22:11:26 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/22 22:43:38 by haranivo         ###   ########.fr       */
+/*   Updated: 2026/02/23 14:46:28 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ static void	ft_lhexa(unsigned long add)
 	free(hexa);
 }
 
-int ft_printf_lhexa(unsigned long add)
+int	ft_printf_lhexa(unsigned long add)
 {
-    ft_lhexa(add);
-    return (ft_count_long(add));
+	ft_lhexa(add);
+	return (ft_count_long(add));
 }

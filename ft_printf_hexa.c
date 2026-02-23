@@ -6,7 +6,7 @@
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 20:40:52 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/22 23:17:35 by haranivo         ###   ########.fr       */
+/*   Updated: 2026/02/23 15:02:19 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static int	ft_count(unsigned int nbr)
 	int	i;
 
 	i = 0;
-
 	while (nbr > 0)
 	{
 		nbr /= 16;
@@ -52,7 +51,8 @@ static void	ft_hexa(unsigned int nbr, char type)
 	ft_rev_char(hexa);
 	free(hexa);
 }
-int ft_printf_hexa(unsigned int nbr, char type)
+
+int	ft_printf_hexa(unsigned int nbr, char type)
 {
 	if (nbr == 0)
 	{
@@ -64,7 +64,6 @@ int ft_printf_hexa(unsigned int nbr, char type)
 }
 
 // #include <stdio.h>
-
 
 // int main(void)
 // {
@@ -82,7 +81,7 @@ int ft_printf_hexa(unsigned int nbr, char type)
 // 	ft_printf_hexa(0, 'x');
 // 	write(1, "\n", 1);
 
-// 	printf("\nft_printf return %d\n", ft_printf_hexa(n, 'x'));
-// 	printf("\nft_printf return %d\n", ft_printf_hexa(0, 'x'));
+// 	printf("\nft_printf return (%d\n", ft_printf_hexa(n, 'x')));
+// 	printf("\nft_printf return (%d\n", ft_printf_hexa(0, 'x')));
 // 	return (0);
 // }
