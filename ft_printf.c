@@ -6,7 +6,7 @@
 /*   By: haranivo <haranivo@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 17:44:04 by haranivo          #+#    #+#             */
-/*   Updated: 2026/02/23 14:44:26 by haranivo         ###   ########.fr       */
+/*   Updated: 2026/02/25 07:32:52 by haranivo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_printf(const char *format, ...)
 	len = 0;
 	i = 0;
 	if (!format)
-		return (0);
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
